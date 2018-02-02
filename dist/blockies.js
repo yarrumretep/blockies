@@ -354,7 +354,7 @@ function toDataUrl(address) {
       p.fillRect(col * opts.scale, row * opts.scale, opts.scale, opts.scale, pngColor);
     }
   }
-  return `data:image/png;base64,${p.getBase64()}`;
+  return 'data:image/png;base64,' + p.getBase64();
 }
 
 exports.toDataUrl = toDataUrl;
