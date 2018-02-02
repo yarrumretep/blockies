@@ -86,9 +86,9 @@ export function toDataUrl(address) {
   const width = Math.sqrt(imageData.length);
 
   const p = new PNG(opts.size * opts.scale, opts.size * opts.scale, 3)
-  const bgcolor = p.color.apply(null, hsl2rgb.apply(null, opts.bgcolor))
-  const color = p.color.apply(null, hsl2rgb.apply(null, opts.color))
-  const spotcolor = p.color.apply(null, hsl2rgb.apply(null, opts.spotcolor))
+  const bgcolor = p.color.apply(p.color, hsl2rgb.apply(null, opts.bgcolor))
+  const color = p.color.apply(p.color, hsl2rgb.apply(null, opts.color))
+  const spotcolor = p.color.apply(p.color, hsl2rgb.apply(null, opts.spotcolor))
 
   for (var i = 0; i < imageData.length; i++) {
     var row = Math.floor(i / width);
